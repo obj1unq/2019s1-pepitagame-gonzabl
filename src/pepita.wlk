@@ -6,7 +6,10 @@ object pepita {
 	var property ciudad = buenosAires 
 
 	var property position = game.at(3,3)
-	method image() = "pepita.png"
+	method image(){ 
+		if(energia > 100){return "pepita-gorda-raw.png"}
+			else{return "pepita.png"}
+	}
 
 	method come(comida) {
 		energia = energia + comida.energia()
