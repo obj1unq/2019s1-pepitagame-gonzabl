@@ -19,6 +19,7 @@ program PepitaGame {
 	game.addVisual(pepita)
 	game.addVisual(pepona)
 	game.addVisual(pipa)
+	game.addVisual(roque)
 	
 //  COLISIONES
 	//game.whenCollideDo(pepona,{golodrina =>  game.say(pepona, "Hola Pepita!")})// defino primero al objeto al cual quiero aplicarle la colision(pepona) 
@@ -26,8 +27,12 @@ program PepitaGame {
 
 //	game.whenCollideDo(pepita,{ave =>  pepita.nuevaAmiga(ave)}) // opcion 1
 	//game.whenCollideDo(pepona,{golodrina =>  console.println("hola pepita!")}) // opcion 
-	game.whenCollideDo(pepona,{golodrina =>  golodrina.nuevaAmiga(pepona)}) // opcion 2
-	game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
+	//game.whenCollideDo(pepona,{golodrina =>  golodrina.nuevaAmiga(pepona)}) // opcion 2
+	//game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
+	game.whenCollideDo(manzana,{roque => roque.guardarComida(manzana)} )
+	game.whenCollideDo(alpiste,{roque => roque.guardarComida(alpiste)} )
+	
+	
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
 	

@@ -1,4 +1,5 @@
 import ciudades.*
+import comidas.*
 import wollok.game.*
 
 object pepita {
@@ -73,20 +74,31 @@ object pipa{
 }
 
 object roque{
-	//var comida
+	var mochila = null
+	
 	var property position = game.at(4,3)
+	
+	method image() = "jugador.png"
 	
 	method move(nuevaPosicion) {
 		self.position(nuevaPosicion)
 	}
 	
-	method guardarComida(){
-		
+	method guardarComida(comida){
+		if(null == mochila){
+			mochila = comida
+			game.removeVisual(mochila)
+		}else{
+			mochila.position(game.at(1.randomUpTo(8).truncate(0),1.randomUpTo(8).truncate(0)))
+			mochila = comida
+			game.removeVisual(comida)
+		}
+		 // ramdom es : game.at(1.randomUpTo(8).truncate(0),1.randomUpTo(8).truncate(0))
 	}
 	
-	method darComidaAPepita(){
+	method alimentar(ave){
 		
-		
+		ave.come(mochila)
 	}
 	
 }
