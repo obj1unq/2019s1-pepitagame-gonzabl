@@ -71,3 +71,22 @@ object pipa{
 	method position() = game.at(5,8)
 	method nombre() = "pipa" 
 }
+
+object roque{
+	//var comida
+	var property position = game.at(4,3)
+	
+	method move(nuevaPosicion) {
+		self.position(nuevaPosicion)
+	}
+	
+	method guardarComida(){
+		
+	}
+	
+	method darComidaAPepita(){
+		
+		
+	}
+	
+}

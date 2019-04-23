@@ -38,10 +38,11 @@ program PepitaGame {
 	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
 	//keyboard.m().onPressDo{game.removeVisual(manzana) pepita.come(manzana) pepita.move(game.at(5,1)) } GT
 	//keyboard.a().onPressDo{game.removeVisual(alpiste) pepita.come(alpiste) pepita.move(game.at(5,5)) } GT	
-	keyboard.up().onPressDo { pepita.move(pepita.position().up(1)) }
-	keyboard.down().onPressDo { pepita.move(pepita.position().down(1)) }
-	keyboard.left().onPressDo { pepita.move(pepita.position().left(1)) }
-	keyboard.right().onPressDo { pepita.move(pepita.position().right(1)) }
+	
+	keyboard.up().onPressDo { roque.move(roque.position().up(1)) }
+	keyboard.down().onPressDo { roque.move(roque.position().down(1)) }
+	keyboard.left().onPressDo { roque.move(roque.position().left(1)) }
+	keyboard.right().onPressDo { roque.move(roque.position().right(1)) }
 		
 //	START
 	game.start()
