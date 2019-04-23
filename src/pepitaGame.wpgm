@@ -26,8 +26,8 @@ program PepitaGame {
 
 //	game.whenCollideDo(pepita,{ave =>  pepita.nuevaAmiga(ave)}) // opcion 1
 	//game.whenCollideDo(pepona,{golodrina =>  console.println("hola pepita!")}) // opcion 
-	//game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
-	//game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
+	game.whenCollideDo(pepona,{golodrina =>  golodrina.nuevaAmiga(pepona)}) // opcion 2
+	game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
 	

@@ -63,10 +63,11 @@ object pepita {
 object pepona{
 	method image() = "pepona.png"
 	method position() = game.at(2,8) 
-	
+	method nombre() = "pepona"
 }
 
 object pipa{
 	method image() = "pepitaCanchera.png"
-	method position() = game.at(5,8) 
+	method position() = game.at(5,8)
+	method nombre() = "pipa" 
 }
