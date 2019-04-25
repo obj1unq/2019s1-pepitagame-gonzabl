@@ -59,18 +59,33 @@ object pepita {
 		self.move(comida.position())
 		game.removeVisual(comida)
 	}
+	
+	method colicionasteCon(entrenador){
+		
+		entrenador.alimentar(self)
+	}
 }
 
 object pepona{
 	method image() = "pepona.png"
 	method position() = game.at(2,8) 
 	method nombre() = "pepona"
+	
+	method colicionasteCon(entrenador){
+		
+	// No hace nada, respeta el poliformismo
+	}
 }
 
 object pipa{
 	method image() = "pepitaCanchera.png"
 	method position() = game.at(5,8)
 	method nombre() = "pipa" 
+	
+	method colicionasteCon(entrenador){
+		
+	// No hace nada, respeta el poliformismo
+	}
 }
 
 object roque{
@@ -84,21 +99,22 @@ object roque{
 		self.position(nuevaPosicion)
 	}
 	
+
 	method guardarComida(comida){
-		if(null == mochila){
+		if(mochila == null){
 			mochila = comida
 			game.removeVisual(mochila)
 		}else{
-			mochila.position(game.at(1.randomUpTo(8).truncate(0),1.randomUpTo(8).truncate(0)))
+			game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
 			mochila = comida
 			game.removeVisual(comida)
-		}
-		 // ramdom es : game.at(1.randomUpTo(8).truncate(0),1.randomUpTo(8).truncate(0))
-	}
-	
+			}
+		}	
 	method alimentar(ave){
 		
 		ave.come(mochila)
+		game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
+		mochila = null
 	}
 	
 }

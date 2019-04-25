@@ -8,7 +8,10 @@ object manzana {
 	
 	method energia() = 80
 	
-	
+	method colicionasteCon(entrenador){
+		
+		entrenador.guardarComida(self)
+	}
 	
 }
 
@@ -19,6 +22,11 @@ object alpiste {
 	method image() = "alpiste.png"
 	
 	method energia() = 5
+	
+	method colicionasteCon(entrenador){
+		
+		entrenador.guardarComida(self)
+	}
 	
 	
 }

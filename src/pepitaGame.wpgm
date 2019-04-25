@@ -22,16 +22,20 @@ program PepitaGame {
 	game.addVisual(roque)
 	
 //  COLISIONES
+	
 	//game.whenCollideDo(pepona,{golodrina =>  game.say(pepona, "Hola Pepita!")})// defino primero al objeto al cual quiero aplicarle la colision(pepona) 
 
 
-//	game.whenCollideDo(pepita,{ave =>  pepita.nuevaAmiga(ave)}) // opcion 1
+    //game.whenCollideDo(pepita,{ave =>  pepita.nuevaAmiga(ave)}) // opcion 1
 	//game.whenCollideDo(pepona,{golodrina =>  console.println("hola pepita!")}) // opcion 
 	//game.whenCollideDo(pepona,{golodrina =>  golodrina.nuevaAmiga(pepona)}) // opcion 2
 	//game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
-	game.whenCollideDo(manzana,{roque => roque.guardarComida(manzana)} )
-	game.whenCollideDo(alpiste,{roque => roque.guardarComida(alpiste)} )
 	
+	/*game.whenCollideDo(manzana,{roque => roque.guardarComida(manzana)} )
+	game.whenCollideDo(alpiste,{roque => roque.guardarComida(alpiste)} )
+	game.whenCollideDo(pepita,{roque => roque.alimentar(pepita)})*/ //Error : funciona una vez , pero luego falta inicializar la variable.
+	
+	game.whenCollideDo(roque,{objeto=> objeto.colicionasteCon(roque)})
 	
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
@@ -41,7 +45,7 @@ program PepitaGame {
 
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
 	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
-	//keyboard.m().onPressDo{game.removeVisual(manzana) pepita.come(manzana) pepita.move(game.at(5,1)) } GT
+	//keyboard.m().onPressDo{game.removeVisual(manzana) pepita.come(manzana) pepita.move(game.at(5,1)) } GT se deberia hacer en un metodo y llamar aqui a ese metodo
 	//keyboard.a().onPressDo{game.removeVisual(alpiste) pepita.come(alpiste) pepita.move(game.at(5,5)) } GT	
 	
 	keyboard.up().onPressDo { roque.move(roque.position().up(1)) }
