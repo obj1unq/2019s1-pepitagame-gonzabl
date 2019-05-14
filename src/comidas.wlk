@@ -8,9 +8,9 @@ object manzana {
 	
 	method energia() = 80
 	
-	method colicionasteCon(entrenador){
+	method colicionasteCon(alguien){
 		
-		entrenador.guardarComida(self)
+		alguien.guardarComida(self)
 	}
 	
 }
@@ -23,10 +23,9 @@ object alpiste {
 	
 	method energia() = 5
 	
-	method colicionasteCon(entrenador){
+	method colicionasteCon(alguien){
 		
-		entrenador.guardarComida(self)
+		alguien.guardarComida(self)
 	}
-	
 	
 }

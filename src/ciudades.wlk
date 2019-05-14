@@ -6,7 +6,7 @@ object villaGesell {
 	
 	method nombre() = "Villa Gesell"
 	
-	method colicionasteCon(entrenador){
+	method colicionasteCon(alguien){
 		
 	// No hace nada, respeta el poliformismo
 	}
@@ -18,7 +18,7 @@ object buenosAires {
 	
 	method nombre() = "Buenos Aires"
 	
-	method colicionasteCon(entrenador){
+	method colicionasteCon(alguien){
 		
 	// No hace nada, respeta el poliformismo
 	}

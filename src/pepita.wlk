@@ -111,10 +111,11 @@ object roque{
 			}
 		}	
 	method alimentar(ave){
-		
-		ave.come(mochila)
-		game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
-		mochila = null
+		if (mochila != null) {
+			ave.come(mochila)
+			game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
+			mochila = null			
+		}
 	}
 	
 }
