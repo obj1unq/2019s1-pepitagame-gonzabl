@@ -13,6 +13,11 @@ object manzana {
 		alguien.guardarComida(self)
 	}
 	
+	method chocasteCon(alguien){
+		
+		alguien.come(self)
+	}
+	
 }
 
 object alpiste {
@@ -26,6 +31,11 @@ object alpiste {
 	method colicionasteCon(alguien){
 		
 		alguien.guardarComida(self)
+	}
+	
+	method chocasteCon(alguien){
+		
+		alguien.come(self)
 	}
 	
 }

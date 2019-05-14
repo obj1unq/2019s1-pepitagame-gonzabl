@@ -61,8 +61,7 @@ object pepita {
 	}
 	
 	method colicionasteCon(entrenador){
-		
-		entrenador.alimentar(self)
+		// no hace nada
 	}
 }
 
@@ -72,6 +71,11 @@ object pepona{
 	method nombre() = "pepona"
 	
 	method colicionasteCon(entrenador){
+		
+	// No hace nada, respeta el poliformismo
+	}
+	
+	method chocasteCon(alguien){
 		
 	// No hace nada, respeta el poliformismo
 	}
@@ -86,6 +90,11 @@ object pipa{
 		
 	// No hace nada, respeta el poliformismo
 	}
+	
+	method chocasteCon(alguien){
+		
+	// No hace nada, respeta el poliformismo
+	}
 }
 
 object roque{
@@ -97,6 +106,11 @@ object roque{
 	
 	method move(nuevaPosicion) {
 		self.position(nuevaPosicion)
+	}
+	
+	method chocasteCon(alguien){
+		
+		game.say(pepita, "Hola Roque!")
 	}
 	
 

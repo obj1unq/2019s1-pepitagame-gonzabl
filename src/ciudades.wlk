@@ -10,6 +10,11 @@ object villaGesell {
 		
 	// No hace nada, respeta el poliformismo
 	}
+	
+	method chocasteCon(alguien){
+		
+	// No hace nada, respeta el poliformismo
+	}
 }
 
 object buenosAires {
@@ -19,6 +24,11 @@ object buenosAires {
 	method nombre() = "Buenos Aires"
 	
 	method colicionasteCon(alguien){
+		
+	// No hace nada, respeta el poliformismo
+	}
+	
+	method chocasteCon(alguien){
 		
 	// No hace nada, respeta el poliformismo
 	}
