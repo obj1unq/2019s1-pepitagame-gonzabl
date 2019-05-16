@@ -17,17 +17,48 @@ program PepitaGame {
 	game.addVisual(buenosAires)
 	game.addVisual(villaGesell)
 	game.addVisual(pepita)
+	game.addVisual(pepona)
+	game.addVisual(pipa)
+	game.addVisual(roque)
+	
+//  COLISIONES
+	
+	//game.whenCollideDo(pepona,{golodrina =>  game.say(pepona, "Hola Pepita!")})// defino primero al objeto al cual quiero aplicarle la colision(pepona) 
 
+
+    //game.whenCollideDo(pepita,{ave =>  pepita.nuevaAmiga(ave)}) // opcion 1
+	//game.whenCollideDo(pepona,{golodrina =>  console.println("hola pepita!")}) // opcion 
+	//game.whenCollideDo(pepona,{golodrina =>  golodrina.nuevaAmiga(pepona)}) // opcion 2
+	//game.whenCollideDo(pipa,{golodrina =>  golodrina.nuevaAmiga(pipa)}) // opcion 2
+	
+	/*game.whenCollideDo(manzana,{roque => roque.guardarComida(manzana)} )
+	game.whenCollideDo(alpiste,{roque => roque.guardarComida(alpiste)} )
+	game.whenCollideDo(pepita,{roque => roque.alimentar(pepita)})*/ //Error : funciona una vez , pero luego falta inicializar la variable.
+	
+	game.whenCollideDo(roque,{objeto=> objeto.colicionasteCon(roque)})
+	game.whenCollideDo(pepita,{objeto=> objeto.chocasteCon(pepita)})
+	
+	
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
+	
+	//keyboard.m().onPressDo { pepita.volaYCome(manzana) } // CORREGIDO
+	//keyboard.a().onPressDo { pepita.volaYCome(alpiste) } // CORREGIDO
 
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }
 	keyboard.b().onPressDo { pepita.volaHacia(buenosAires) }
-
-	keyboard.up().onPressDo { pepita.move(pepita.position().up(1)) }
-	keyboard.down().onPressDo { pepita.move(pepita.position().down(1)) }
-	keyboard.left().onPressDo { pepita.move(pepita.position().left(1)) }
-	keyboard.right().onPressDo { pepita.move(pepita.position().right(1)) }
+	//keyboard.m().onPressDo{game.removeVisual(manzana) pepita.come(manzana) pepita.move(game.at(5,1)) } GT se deberia hacer en un metodo y llamar aqui a ese metodo
+	//keyboard.a().onPressDo{game.removeVisual(alpiste) pepita.come(alpiste) pepita.move(game.at(5,5)) } GT	
+	
+	keyboard.up().onPressDo { roque.move(roque.position().up(1)) }
+	keyboard.down().onPressDo { roque.move(roque.position().down(1)) }
+	keyboard.left().onPressDo { roque.move(roque.position().left(1)) }
+	keyboard.right().onPressDo { roque.move(roque.position().right(1)) }
+	
+	keyboard.w().onPressDo { pepita.move(pepita.position().up(1)) }
+	keyboard.s().onPressDo { pepita.move(pepita.position().down(1)) }
+	keyboard.a().onPressDo { pepita.move(pepita.position().left(1)) }
+	keyboard.d().onPressDo { pepita.move(pepita.position().right(1)) }
 		
 //	START
 	game.start()
