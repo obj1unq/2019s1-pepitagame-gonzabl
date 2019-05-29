@@ -10,12 +10,11 @@ object manzana {
 	
 	method colicionasteCon(alguien){
 		
-		alguien.guardarComida(self)
 	}
 	
-	method chocasteCon(alguien){
+	method chocasteCon(ave){
 		
-		alguien.come(self)
+		ave.come(self)
 	}
 	
 }
@@ -30,7 +29,6 @@ object alpiste {
 	
 	method colicionasteCon(alguien){
 		
-		alguien.guardarComida(self)
 	}
 	
 	method chocasteCon(alguien){

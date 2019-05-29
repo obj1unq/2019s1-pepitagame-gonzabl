@@ -15,6 +15,7 @@ object pepita {
 
 	method come(comida) {
 		energia = energia + comida.energia()
+		game.removeVisual(comida)
 	}
 	
 	/*method volaHacia(unaCiudad) {
@@ -63,6 +64,11 @@ object pepita {
 	method colicionasteCon(entrenador){
 		// no hace nada
 	}
+	
+	method chocasteCon(alguien){
+		
+		game.say(self, "Hola Roque!")
+	}
 }
 
 object pepona{
@@ -110,11 +116,10 @@ object roque{
 	
 	method chocasteCon(alguien){
 		
-		game.say(pepita, "Hola Roque!")
+		game.say(self, "Hola Pepita!")
 	}
 	
-
-	method guardarComida(comida){
+	/*method guardarComida(comida){
 		if(mochila == null){
 			mochila = comida
 			game.removeVisual(mochila)
@@ -131,5 +136,12 @@ object roque{
 			mochila = null			
 		}
 	}
+	 */
 	
+	method dejarComida(comida) {
+		game.addVisualIn(comida, self.position())
+	}
+	method come(comida) {
+		
+	}
 }

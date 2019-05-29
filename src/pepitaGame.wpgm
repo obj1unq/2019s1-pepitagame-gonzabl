@@ -37,11 +37,12 @@ program PepitaGame {
 	
 	game.whenCollideDo(roque,{objeto=> objeto.colicionasteCon(roque)})
 	game.whenCollideDo(pepita,{objeto=> objeto.chocasteCon(pepita)})
-	
+	game.whenCollideDo(roque,{objeto=> objeto.chocasteCon(roque)})
 	
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
-	
+	keyboard.l().onPressDo {roque.dejarComida(alpiste) }
+	keyboard.m().onPressDo {roque.dejarComida(manzana)}
 	//keyboard.m().onPressDo { pepita.volaYCome(manzana) } // CORREGIDO
 	//keyboard.a().onPressDo { pepita.volaYCome(alpiste) } // CORREGIDO
 
