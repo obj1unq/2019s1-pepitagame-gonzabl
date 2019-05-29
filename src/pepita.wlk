@@ -18,13 +18,6 @@ object pepita {
 		game.removeVisual(comida)
 	}
 	
-	/*method volaHacia(unaCiudad) {
-		if (ciudad != unaCiudad) {// dentro del parentesis escribir una funcion que puedeVolarHacia() y poner todas las validaciones.
-			self.move(unaCiudad.position())
-			ciudad = unaCiudad
-		}else{ game.say(self, "Ya estoy en !")}// energiaNecesariaParaVolarHacia() es un metodo que usa energiaParaVolar() y move(nuevaPosicion)
-	}*/
-	
 	method volaHacia(unaCiudad){
 		self.energiaNecesariaParaVolarHacia(unaCiudad)
 	}
@@ -62,12 +55,11 @@ object pepita {
 	}
 	
 	method colicionasteCon(entrenador){
-		// no hace nada
+		game.say(self, "Hola Roque!")
 	}
 	
 	method chocasteCon(alguien){
 		
-		game.say(self, "Hola Roque!")
 	}
 }
 
@@ -103,45 +95,3 @@ object pipa{
 	}
 }
 
-object roque{
-	var mochila = null
-	
-	var property position = game.at(4,3)
-	
-	method image() = "jugador.png"
-	
-	method move(nuevaPosicion) {
-		self.position(nuevaPosicion)
-	}
-	
-	method chocasteCon(alguien){
-		
-		game.say(self, "Hola Pepita!")
-	}
-	
-	/*method guardarComida(comida){
-		if(mochila == null){
-			mochila = comida
-			game.removeVisual(mochila)
-		}else{
-			game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
-			mochila = comida
-			game.removeVisual(comida)
-			}
-		}	
-	method alimentar(ave){
-		if (mochila != null) {
-			ave.come(mochila)
-			game.addVisualIn(mochila, game.at(0.randomUpTo(9).truncate(0),0.randomUpTo(9).truncate(0)))
-			mochila = null			
-		}
-	}
-	 */
-	
-	method dejarComida(comida) {
-		game.addVisualIn(comida, self.position())
-	}
-	method come(comida) {
-		
-	}
-}
